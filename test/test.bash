@@ -3,8 +3,8 @@
 
 # 変数定義
 DIR=~/ros2_ws
-PKG_NAME=pi_calculator_pkg # ROS2パッケージ名を変更してください
-LAUNCH_FILE=pi_calculator.launch.py # プログラム専用の適切なローンチファイル名に変更してください
+PKG_NAME=mypkg # ROS2パッケージ名を変更してください
+LAUNCH_FILE=talk_listen.launch.py # プログラム専用の適切なローンチファイル名に変更してください
 LOG_FILE=/tmp/${PKG_NAME}_test.log
 TIMEOUT_DURATION=15 # 期待する出力をキャッチするために必要な時間
 

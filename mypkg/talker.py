@@ -22,7 +22,7 @@ class PiCalculator(Node):
         return (4 * self.inside_circle) / self.total_points
 
     def publish_pi_estimate(self):
-        pi_estimate = self.calculate_pi(10000)
+        pi_estimate = self.calculate_pi(1000000)
         msg = Float64()
         msg.data = pi_estimate
         self.publisher_.publish(msg)
