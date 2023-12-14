@@ -21,6 +21,7 @@ source $DIR/install/setup.bash
 
 # ローンチファイルを実行しログに出力、その後出力をチェック
 pwd
+ls
 timeout $TIMEOUT_DURATION ros2 launch $PKG_NAME $LAUNCH_FILE > $LOG_FILE
 
 # 出力値の確認 - ここでPiの近似として3.14を使っていますが、必要に応じて調整してください
