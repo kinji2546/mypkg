@@ -1,18 +1,38 @@
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int16
+from std_msgs.msg import Float64
+import random
 
-rclpy.init()
-node = Node("talker")
-pub = node.create_publisher(Int16, "countup", 10)
-n = 0
+class PiCalculator(Node):
+    def __init__(self):
+        super().__init__('pi_calculator')
+        self.publisher_ = self.create_publisher(Float64, 'pi_estimate', 10)
+        self.timer = self.create_timer(1.0, self.publish_pi_estimate)
 
-def cb():
-    global n
-    msg = Int16()
-    msg.data = n
-    pub.publish(msg)
-    n += 1
+    def calculate_pi(self, num_points):
+        inside_circle = 0
+        for i in range(num_points):
+            x = random.uniform(-1.0, 1.0)
+            y = random.uniform(-1.0, 1.0)
+            if x**2 + y**2 <= 1.0:
+                inside_circle += 1
+        return (4 * inside_circle) / num_points
 
-node.create_timer(0.5, cb)
-rclpy.spin(node)
+    def publish_pi_estimate(self):
+        num_points = 10000
+        pi_estimate = self.calculate_pi(num_points)
+        msg = Float64()
+        msg.data = pi_estimate
+        self.publisher_.publish(msg)
+
+def main():
+    rclpy.init()
+    pi_calculator = PiCalculator()
+
+    rclpy.spin(pi_calculator)
+
+    pi_calculator.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()

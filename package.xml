@@ -7,6 +7,7 @@
   <maintainer email="sorakara656@gmail.com">nozaki</maintainer>
   <license>BSD-3-Clause</license>
   <exec_depend>rclpy</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
   <exec_depend>std_msgs</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
