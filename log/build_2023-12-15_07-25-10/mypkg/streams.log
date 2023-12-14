@@ -1,0 +1,22 @@
+[0.840s] Invoking command in '/home/qxyt56fr/kako/ros2_ws/src/mypkg': PYTHONPATH=/home/qxyt56fr/kako/ros2_ws/src/mypkg/build/mypkg/prefix_override:/home/qxyt56fr/kako/ros2_ws/src/mypkg/install/mypkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/mypkg build --build-base /home/qxyt56fr/kako/ros2_ws/src/mypkg/build/mypkg/build install --record /home/qxyt56fr/kako/ros2_ws/src/mypkg/build/mypkg/install.log --install-scripts $base/lib/mypkg --single-version-externally-managed
+[1.011s] running egg_info
+[1.012s] writing build/mypkg/mypkg.egg-info/PKG-INFO
+[1.012s] writing dependency_links to build/mypkg/mypkg.egg-info/dependency_links.txt
+[1.012s] writing entry points to build/mypkg/mypkg.egg-info/entry_points.txt
+[1.012s] writing requirements to build/mypkg/mypkg.egg-info/requires.txt
+[1.012s] writing top-level names to build/mypkg/mypkg.egg-info/top_level.txt
+[1.040s] reading manifest file 'build/mypkg/mypkg.egg-info/SOURCES.txt'
+[1.042s] writing manifest file 'build/mypkg/mypkg.egg-info/SOURCES.txt'
+[1.042s] running build
+[1.043s] running build_py
+[1.043s] running install
+[1.044s] running install_lib
+[1.045s] running install_data
+[1.046s] running install_egg_info
+[1.047s] removing '/home/qxyt56fr/kako/ros2_ws/src/mypkg/install/mypkg/lib/python3.8/site-packages/mypkg-0.0.0-py3.8.egg-info' (and everything under it)
+[1.048s] Copying build/mypkg/mypkg.egg-info to /home/qxyt56fr/kako/ros2_ws/src/mypkg/install/mypkg/lib/python3.8/site-packages/mypkg-0.0.0-py3.8.egg-info
+[1.048s] running install_scripts
+[1.064s] Installing listener script to /home/qxyt56fr/kako/ros2_ws/src/mypkg/install/mypkg/lib/mypkg
+[1.064s] Installing talker script to /home/qxyt56fr/kako/ros2_ws/src/mypkg/install/mypkg/lib/mypkg
+[1.064s] writing list of installed files to '/home/qxyt56fr/kako/ros2_ws/src/mypkg/build/mypkg/install.log'
+[1.084s] Invoked command in '/home/qxyt56fr/kako/ros2_ws/src/mypkg' returned '0': PYTHONPATH=/home/qxyt56fr/kako/ros2_ws/src/mypkg/build/mypkg/prefix_override:/home/qxyt56fr/kako/ros2_ws/src/mypkg/install/mypkg/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/mypkg build --build-base /home/qxyt56fr/kako/ros2_ws/src/mypkg/build/mypkg/build install --record /home/qxyt56fr/kako/ros2_ws/src/mypkg/build/mypkg/install.log --install-scripts $base/lib/mypkg --single-version-externally-managed
