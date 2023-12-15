@@ -8,7 +8,7 @@ class PiCalculator(Node):
     def __init__(self):
         super().__init__('pi_calculator')
         self.publisher_ = self.create_publisher(Float64, 'pi_estimate', 10)
-        timer_period = 1  # seconds
+        timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.publish_pi_estimate)
         self.total_points = 0
         self.inside_circle = 0
@@ -22,7 +22,7 @@ class PiCalculator(Node):
         return (4 * self.inside_circle) / self.total_points
 
     def publish_pi_estimate(self):
-        pi_estimate = self.calculate_pi(1000000)
+        pi_estimate = self.calculate_pi(10000)
         msg = Float64()
         msg.data = pi_estimate
         self.publisher_.publish(msg)
@@ -31,7 +31,7 @@ class PiCalculator(Node):
 def main(args=None):
     rclpy.init(args=args)
     pi_calculator = PiCalculator()
-    rclpy.spin(pi_calculator)
+    pi_calculator.publish_pi_estimate()
     pi_calculator.destroy_node()
     rclpy.shutdown()
 
