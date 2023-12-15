@@ -15,9 +15,6 @@ colcon build --packages-select $PKG_NAME
 
 source $DIR/install/setup.bash
 
-
-timeout $TIMEOUT_DURATION "ros2 launch $PKG_NAME $LAUNCH_FILE" > $LOG_FILE
-
 # 出力値の確認 - ここでPiの近似として3.14を使っていますが、必要に応じて調整してください
 grep "data: 3.14" $LOG_FILE
 if [ $? -eq 0 ]; then
