@@ -16,12 +16,12 @@ colcon build --packages-select $PKG_NAME
 source $DIR/ros2_ws/install/setup.bash
 
 ros2 launch $PKG_NAME $LAUNCH_FILE > $LOG_FILE 2>&1 &
+
+sleep $TIMEOUT_DURATION
+pkill -f 'ros2 launch'
 if [ -e $LOG_FILE ]; then
   echo "Log Fileあるよ."
 fi
-sleep $TIMEOUT_DURATION
-pkill -f 'ros2 launch'
-
 grep "pi estimate:" $LOG_FILE | grep "3.14"
 if [ $? -eq 0 ]; then
     echo "Test passed: Pi estimate found in log."
