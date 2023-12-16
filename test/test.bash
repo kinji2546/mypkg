@@ -1,7 +1,7 @@
 #!/bin/bash
 #SPDX-License-Identifier: BSD-3-Clause
 
-DIR=~/ros2_ws
+DIR=~/kako/ros2_ws
 PKG_NAME=mypkg
 LAUNCH_FILE=talk_listen.launch.py
 LOG_FILE=/tmp/${PKG_NAME}_test.log
