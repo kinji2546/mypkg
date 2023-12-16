@@ -1,7 +1,7 @@
 #!/bin/bash
 #SPDX-License-Identifier: BSD-3-Clause
 
-DIR=~/kako/ros2_ws
+DIR=~
 PKG_NAME=mypkg
 LAUNCH_FILE=talk_listen.launch.py
 LOG_FILE=/tmp/${PKG_NAME}_test.log
@@ -13,7 +13,7 @@ TIMEOUT_DURATION=20
 source /opt/ros/foxy/setup.bash
 
 # ワークスペースに移動してビルド
-cd $DIR
+cd $DIR/ros2_ws
 colcon build --packages-select $PKG_NAME
 
 # ビルドしたパッケージのセットアップ
