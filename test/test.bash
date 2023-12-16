@@ -27,7 +27,7 @@ sleep $TIMEOUT_DURATION
 pkill -f 'ros2 launch'
 
 # 出力値の確認 - ここでPiの近似値として3.14を使っていますが、必要に応じて調整してください
-grep "data: 3.14" $LOG_FILE
+grep "pi estimate:" $LOG_FILE | grep "3.14"
 if [ $? -eq 0 ]; then
     echo "Test passed: Pi estimate found in log."
     exit 0
