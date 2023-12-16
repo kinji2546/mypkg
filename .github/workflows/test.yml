@@ -13,4 +13,3 @@ jobs:
           rosdep update
           rosdep install -i --from-path src --rosdistro humble -y
           bash -xv ./src/mypkg/test/test.bash /root
-          grep "pi estimate:" /tmp/mypkg_test.log| xargs -I{} echo {}

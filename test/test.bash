@@ -28,7 +28,7 @@ if [ -e $LOG_FILE ]; then
 fi
 
 # 出力値の確認 - ここでPiの近似値として3.14
-grep "pi estimate:" $LOG_FILE | grep "3.14"
+grep "pi estimate:" $LOG_FILE | grep "3.14" | xargs -I{} echo {}
 if [ $? -eq 0 ]; then
     echo "Test passed: Pi estimate found in log."
     exit 0
