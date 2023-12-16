@@ -21,7 +21,7 @@ source $DIR/ros2_ws/install/setup.bash
 
 # テスト用ランチファイルの実行とログの出力
 ros2 launch $PKG_NAME $LAUNCH_FILE > $LOG_FILE 2>&1 &
-
+echo $?
 # ランチファイルが時間内に完了するのを待機
 sleep $TIMEOUT_DURATION
 pkill -f 'ros2 launch'
