@@ -4,7 +4,7 @@
 DIR=~
 PKG_NAME=mypkg
 LAUNCH_FILE=talk_listen.launch.py
-LOG_FILE=/tmp/${PKG_NAME}_test.log
+LOG_FILE="./${PKG_NAME}_test.log"
 TIMEOUT_DURATION=20
 
 [ "$1" != "" ] && DIR="$1"
@@ -25,6 +25,10 @@ sleep $TIMEOUT_DURATION
 pkill -f 'ros2 launch'
 if [ -e $LOG_FILE ]; then
   echo "Log Fileあるよ."
+else
+  echo "Log Fileが見つかりませんでした。"
+  exit 1
+
 fi
 
 # 出力値の確認 - ここでPiの近似値として3.14
