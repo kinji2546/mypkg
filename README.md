@@ -1,6 +1,7 @@
 # mypkg
-ロボットシステム学で使用したros2
-[![test](https://github.com/kinji2546/mypkg/actions/workflows/test.yml/badge.svg)](https://github.com/kinji2546/mypkg/actions/workflows/test.yml)
+ロボットシステム学で使用したros2  
+
+[![test](https://github.com/kinji2546/mypkg/actions/workflows/test.yml/badge.svg?branch=kada)](https://github.com/kinji2546/mypkg/actions/workflows/test.yml)
 
 
 
