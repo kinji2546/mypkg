@@ -17,13 +17,13 @@ TIMEOUT_DURATION=20
 
 [ "$1" != "" ] && DIR="$1"
 # ROS 2 foxyのセットアップ
-# source /opt/ros/foxy/setup.bash
+source /opt/ros/foxy/setup.bash
 # ワークスペースに移動してビルド
 cd $DIR/ros2_ws
 colcon build --packages-select $PKG_NAME
 
 # ビルドしたパッケージのセットアップ
-source $DIR/ros2_ws/install/setup.bash
+source $DIR/kako/ros2_ws/install/setup.bash
 
 # テスト用ランチファイルの実行とログの出力
 ros2 launch $PKG_NAME $LAUNCH_FILE > $LOG_FILE 2>&1 &

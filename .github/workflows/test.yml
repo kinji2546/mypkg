@@ -3,13 +3,19 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-22.04
-    container: ryuichiueda/ubuntu22.04-ros2:latest
+    container:
+      image: ryuichiueda/ubuntu22.04-ros2:latest
+      options: --user root  # Dockerの実行時にrootとして実行
+
     steps:
       - uses: actions/checkout@v2
       - name: build and test
         run: |
-          rsync -av ./ /root/ros2_ws/src/mypkg/
-          cd /root/ros2_ws
+          mkdir -p /github/workspace  # GitHub Actionsの標準ディレクトリを作成
+          rsync -av ./ /github/workspace/src/mypkg/
+          cd /github/workspace
           rosdep update
           rosdep install -i --from-path src --rosdistro humble -y
-          bash -xv ./src/mypkg/test/test.bash /root
+          bash -xv ./src/mypkg/test/test.bash /github/workspace  # GitHub標準の作業ディレクトリを使う
+        env:
+          GITHUB_WORKSPACE: /github/workspace  # 環境変数をセット
