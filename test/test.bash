@@ -1,10 +1,18 @@
 #!/bin/bash
 #SPDX-License-Identifier: BSD-3-Clause
 
+# 環境変数をチェックして適切に設定する
+if [ -z "$GITHUB_WORKSPACE" ]; then
+  echo "GITHUB_WORKSPACE が設定されていません。CI環境外で実行している可能性があります。"
+  LOG_FILE="./mypkg_test.log"  # ローカル環境でのフォールバック
+else
+  LOG_FILE="${GITHUB_WORKSPACE}/mypkg_test.log"  # CI環境でのパス
+fi
+
 DIR=~
 PKG_NAME=mypkg
 LAUNCH_FILE=talk_listen.launch.py
-LOG_FILE="./${PKG_NAME}_test.log"
+#LOG_FILE="${GITHUB_WORKSPACE}/mypkg_test.log"
 TIMEOUT_DURATION=20
 
 [ "$1" != "" ] && DIR="$1"
