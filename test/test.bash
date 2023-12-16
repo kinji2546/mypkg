@@ -10,6 +10,7 @@ TIMEOUT_DURATION=20
 [ "$1" != "" ] && DIR="$1"
 # ROS 2 foxyのセットアップ
 # source /opt/ros/foxy/setup.bash
+touch $LOG_FILE
 # ワークスペースに移動してビルド
 cd $DIR/ros2_ws
 colcon build --packages-select $PKG_NAME

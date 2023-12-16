@@ -21,5 +21,16 @@
 # 実行手順  
 ## talkerとlistener
 * `ros2 run`で実行する方法
+```bash
 端末1$ ros2 run mypkg talker
+[INFO] [1702743288.403423539] [pi_calculator]: Publishing: "3.141496"
+[INFO] [1702743288.467780713] [pi_calculator]: Publishing: "3.141496"
+[INFO] [1702743288.522915170] [pi_calculator]: Publishing: "3.141497"
+[INFO] [1702743288.562654672] [pi_calculator]: Publishing: "3.141498"
+[INFO] [1702743288.610940721] [pi_calculator]: Publishing: "3.141500"
+以下同じように出力される.
+但し数値は変わる.プログラムを終わらせるときはコントロールキー＋C
+```
+
+
 端末2$ ros2 run mypkg listener
