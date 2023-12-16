@@ -4,13 +4,12 @@
 DIR=~
 PKG_NAME=mypkg
 LAUNCH_FILE=talk_listen.launch.py
-LOG_FILE=~/ros2_ws/src/${PKG_NAME}/test/${PKG_NAME}_test.log
+LOG_FILE=/tmp/${PKG_NAME}_test.log
 TIMEOUT_DURATION=20
 
 [ "$1" != "" ] && DIR="$1"
 # ROS 2 foxyのセットアップ
 # source /opt/ros/foxy/setup.bash
-touch $LOG_FILE
 # ワークスペースに移動してビルド
 cd $DIR/ros2_ws
 colcon build --packages-select $PKG_NAME
