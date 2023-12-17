@@ -11,33 +11,26 @@ fi
 
 DIR=~
 PKG_NAME=mypkg
-#LAUNCH_FILE=talk_listen.launch.py
-#LOG_FILE="${GITHUB_WORKSPACE}/mypkg_test.log"
+LAUNCH_FILE=talk_listen.launch.py
+LOG_FILE=/tmp/mypkg_test.log
 TIMEOUT_DURATION=20
 
 [ "$1" != "" ] && DIR="$1"
 # ROS 2 foxyのセットアップ
-source /opt/ros/foxy/setup.bash
+#source /opt/ros/foxy/setup.bash
 # ワークスペースに移動してビルド
-cd $DIR/kako/ros2_ws
+cd $DIR/ros2_ws
 colcon build 
 
 # ビルドしたパッケージのセットアップ
-source $DIR/kako/ros2_ws/install/setup.bash
-
+#source $DIR/kako/ros2_ws/install/setup.bash
+source $dir/.bashrc
 # テスト用ランチファイルの実行とログの出力
-ros2 launch mypkg talk_listen.launch.py > "$(pwd)/mypkg_test.log"
+ros2 launch mypkg talk_listen.launch.py > "$LOG_FILE"
 
 # ランチファイルが時間内に完了するのを待機
 sleep $TIMEOUT_DURATION
 pkill -f 'ros2 launch'
-if [ -e $LOG_FILE ]; then
-  echo "Log Fileあるよ."
-else
-  echo "Log Fileが見つかりませんでした。"
-  exit 1
-
-fi
 
 # 出力値の確認 - ここでPiの近似値として3.14
 grep "pi estimate:" $LOG_FILE | grep "3.14"
