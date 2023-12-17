@@ -4,14 +4,14 @@
 # 環境変数をチェックして適切に設定する
 if [ -z "$GITHUB_WORKSPACE" ]; then
   echo "GITHUB_WORKSPACE が設定されていません。CI環境外で実行している可能性があります。"
-  LOG_FILE="./mypkg_test.log"  # ローカル環境でのフォールバック
+  LOG_FILE="$(pwd)/mypkg_test.log"  # ローカル環境でのフォールバック
 else
   LOG_FILE="${GITHUB_WORKSPACE}/mypkg_test.log"  # CI環境でのパス
 fi
 
 DIR=~
 PKG_NAME=mypkg
-LAUNCH_FILE=talk_listen.launch.py
+#LAUNCH_FILE=talk_listen.launch.py
 #LOG_FILE="${GITHUB_WORKSPACE}/mypkg_test.log"
 TIMEOUT_DURATION=20
 
@@ -19,14 +19,14 @@ TIMEOUT_DURATION=20
 # ROS 2 foxyのセットアップ
 source /opt/ros/foxy/setup.bash
 # ワークスペースに移動してビルド
-cd $DIR/ros2_ws
-colcon build --packages-select $PKG_NAME
+cd $DIR/kako/ros2_ws
+colcon build 
 
 # ビルドしたパッケージのセットアップ
 source $DIR/kako/ros2_ws/install/setup.bash
 
 # テスト用ランチファイルの実行とログの出力
-ros2 launch $PKG_NAME $LAUNCH_FILE > $LOG_FILE 2>&1 &
+ros2 launch mypkg talk_listen.launch.py > "$(pwd)/mypkg_test.log"
 
 # ランチファイルが時間内に完了するのを待機
 sleep $TIMEOUT_DURATION
