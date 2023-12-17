@@ -2,12 +2,12 @@
 #SPDX-License-Identifier: BSD-3-Clause
 
 # 環境変数をチェックして適切に設定する
-if [ -z "$GITHUB_WORKSPACE" ]; then
-  echo "GITHUB_WORKSPACE が設定されていません。CI環境外で実行している可能性があります。"
-  LOG_FILE="$(pwd)/mypkg_test.log"  # ローカル環境でのフォールバック
-else
-  LOG_FILE="${GITHUB_WORKSPACE}/mypkg_test.log"  # CI環境でのパス
-fi
+#if [ -z "$GITHUB_WORKSPACE" ]; then
+#  echo "GITHUB_WORKSPACE が設定されていません。CI環境外で実行している可能性があります。"
+#  LOG_FILE="$(pwd)/mypkg_test.log"  # ローカル環境でのフォールバック
+#else
+#  LOG_FILE="${GITHUB_WORKSPACE}/mypkg_test.log"  # CI環境でのパス
+#fi
 
 DIR=~
 PKG_NAME=mypkg
