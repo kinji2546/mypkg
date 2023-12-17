@@ -24,7 +24,7 @@ colcon build
 
 # ビルドしたパッケージのセットアップ
 #source $DIR/kako/ros2_ws/install/setup.bash
-source $DIR/.bashrc
+#source $DIR/.bashrc
 # テスト用ランチファイルの実行とログの出力
 ros2 launch mypkg talk_listen.launch.py > "$LOG_FILE"
 
