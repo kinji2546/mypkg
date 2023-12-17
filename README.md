@@ -11,8 +11,6 @@
 * パブリッシャのノード.  
 * モンテカルロ法を利用してπ（3．14）の近似値を求めて最終的にπ（3．14）に近くなる過程をトピック`/pi_setimate`を通じて送信する.
 
-## talk_listen.launch.py  
-*  listener.py & talker.pyを同時に起動するもの.  
 
 ## listener.py  
 * サブスクライバのノード.  
@@ -21,7 +19,7 @@
 # 実行手順  
 ## talkerとlistener  
 * `ros2 run`で実行する方法
-```bash
+```
 端末1$ ros2 run mypkg talker
 [INFO] [1702743288.403423539] [pi_calculator]: Publishing: "3.141496"
 [INFO] [1702743288.467780713] [pi_calculator]: Publishing: "3.141496"
@@ -32,7 +30,7 @@
 但し数値は変わる.プログラムを終わらせるときは[コントロールキー＋C]
 ```
 
-```bash
+```
 端末2$ $ ros2 run mypkg listener
 [INFO] [1702744665.723449651] [pi_listener]: Received pi estimate: "3.140139057118595"
 [INFO] [1702744665.724279642] [pi_listener]: Received pi estimate: "3.140227394222938"
@@ -48,7 +46,7 @@
 
 ## テスト環境  
 * Ubuntu 20.04  
-* ROS2 foxy  
+ 
 
 # 権利関係  
 このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます.  
