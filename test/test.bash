@@ -17,7 +17,7 @@ TIMEOUT_DURATION=20
 
 [ "$1" != "" ] && DIR="$1"
 # ROS 2 foxyのセットアップ
-#source /opt/ros/foxy/setup.bash
+source /opt/ros/foxy/setup.bash
 # ワークスペースに移動してビルド
 cd $DIR/ros2_ws
 colcon build 
