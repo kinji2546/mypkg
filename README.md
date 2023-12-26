@@ -1,24 +1,23 @@
 # mypkg
-ロボットシステム学で使用したros2  
+ros2のパッケージ.    
 
 [![test](https://github.com/kinji2546/mypkg/actions/workflows/test.yml/badge.svg?branch=kada)](https://github.com/kinji2546/mypkg/actions/workflows/test.yml)
-
 
 
 # リポジトリ内の主な内容一覧
 
 ## talker.py
 * パブリッシャのノード.  
-* モンテカルロ法を利用してπ（3．14）の近似値を求めて最終的にπ（3．14）に近くなる過程をトピック`/pi_value`を通じて送信する.
+* モンテカルロ法を利用してπ（3.14）の近似値を求めて最終的にπ（3.14）に近くなる過程をトピック`/pi_value`を通じて送信する.  
 
 
 ## listener.py  
 * サブスクライバのノード.  
-* トピック`/pi_value`からメッセージを受け取り表示する.
+* トピック`/pi_value`からメッセージを受け取り表示する.  
 
 # 実行手順と一部結果
 ## talkerとlistener  
-* `ros2 run`で実行する方法
+* `ros2 run`で実行する方法.  
 ```
 端末1$ ros2 run mypkg talker
 [INFO] [1703520550.981963577] [pi_calculator]: Publishing: "3.146339"
@@ -28,8 +27,9 @@
 [INFO] [1703520550.982815924] [pi_calculator]: Publishing: "3.148098"
 [INFO] [1703520550.983022342] [pi_calculator]: Publishing: "3.148079"
 ```
-以下同じように出力される.
-但し数値は変わる.プログラムを終わらせるときは[Ctrl＋C]
+以下同じように出力される.  
+但し数値は変わる.  
+プログラムを終わらせるときは[Ctrl＋C].  
 
 
 ```
@@ -41,11 +41,12 @@
 [INFO] [1703520550.982815924] [pi_listener]: Received pi estimate: "3.1480988659704027"
 [INFO] [1703520550.983022342] [pi_listener]: Received pi estimate: "3.1480790646118781"
 ```
-以下同じように出力される.
-但し数値は変わる.プログラムを終わらせるときは[Ctrl＋C]
+以下同じように出力される.  
+但し数値は変わる.  
+プログラムを終わらせるときは[Ctrl＋C].  
 
 
-* `ros2 launch`で実行する方法
+* `ros2 launch`で実行する方法.    
 ```
 $ ros2 launch mypkg talk_listen.launch.py
 [INFO] [launch]: All log files can be found below /home/qxyt56fr/.ros/log/2023-12-26-14-00-36-023717-VAIO-12168
@@ -76,8 +77,9 @@ $ ros2 launch mypkg talk_listen.launch.py
 [listener-2] [INFO] [1703566836.429421557] [pi_listener]: Received pi estimate: "3.099099099099099"
 [listener-2] [INFO] [1703566836.430279537] [pi_listener]: Received pi estimate: "3.089615931721195" 
 ```
-以下同じように出力される.
-但し数値は変わる.プログラムを終わらせるときは[Ctrl＋C]
+以下同じように出力される.  
+但し数値は変わる.  
+プログラムを終わらせるときは[Ctrl＋C].  
 
 ## 必要なソフトウェア  
 * Python  
@@ -87,8 +89,8 @@ $ ros2 launch mypkg talk_listen.launch.py
  
 
 # 権利関係  
-このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます. 
-* このパッケージのコードの一部は, 下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを, 本人の許可を得て自身の著作としたものです．
+* このソフトウェアパッケージは,3条項BSDライセンスの下,再頒布および使用が許可されます.  
+* このパッケージのコードの一部は,下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを,本人の許可を得て自身の著作としたものです.  
 * [ryuichiueda/my_slides/robosys_2022/lesson9](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson9.html#/)  
 * [ryuichiueda/my_slides/robosys_2022/lesson10](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson10.html#/)  
 * [ryuichiueda/my_slides/robosys_2022/lesson11](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson11.html#/) 
