@@ -27,15 +27,16 @@ def cb():
     msg = Float64() 
     msg.data = pi_estimate 
     pub.publish(msg)  # PIの近似値をパブリッシュ
+    if total_points % 20000 == 0:
+        node.get_logger().info('Pi approximate value: %f' % pi_estimate)   
 
-    # ここでは3.1415で止まる正確な条件は実装していません。
-    if 3.14150 < pi_estimate <= 3.14159:  # 変更: 正確な範囲チェック条件を実装
+    if 3.1415 <= pi_estimate < 3.1416:  # 変更: 正確な範囲チェック条件を実装
         stop_publishing = True  # 追加: 条件を満たした後、パブリッシングを停止する
         node.get_logger().info(f'Pi approximate value in range (3.14150~3.14159)')
         node.get_logger().info('Publishing stopped.')  # 追加: パブリッシング停止の通知
 
-    if total_points % 20000 == 0:
-        node.get_logger().info('Pi approximate value: %f' % pi_estimate)
+#     if total_points % 20000 == 0:
+#        node.get_logger().info('Pi approximate value: %f' % pi_estimate)
 
 node.create_timer(0.5, cb)  
 rclpy.spin(node)
