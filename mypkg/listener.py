@@ -1,27 +1,13 @@
+# SPDX-FileCopyrightText: 2023 Nozaki 
+# SPDX-License-Identifier: BSD-3-Clause 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float64
+from std_msgs.msg import Float64  # この行を変更: Int16からFloat64に
 
-class PiListener(Node):
-    def __init__(self):
-        super().__init__('pi_listener')
-        self.subscription = self.create_subscription(
-            Float64,
-            'pi_estimate',
-            self.listener_callback,
-            10)
-        self.subscription  # prevent unused variable warning
+def cb(msg):
+    node.get_logger().info("Listen: %f" % msg.data)  # ログ出力のフォーマットを`%f`に変更
 
-    def listener_callback(self, msg):
-        self.get_logger().info('Received pi estimate: "%s"' % msg.data)
-
-def main(args=None):
-    rclpy.init(args=args)
-    pi_listener = PiListener()
-    rclpy.spin(pi_listener)
-
-    pi_listener.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
+rclpy.init()
+node = Node("pi_listener")  # ノード名変更: listenerからpi_listenerに変更しても良い
+sub = node.create_subscription(Float64, "pi_value", cb, 10)  # サブスクリプションの型をFloat64に、トピック名をpi_valueに変更
+rclpy.spin(node)

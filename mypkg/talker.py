@@ -1,39 +1,33 @@
-import rclpy
-from rclpy.node import Node
-from std_msgs.msg import Float64
-import random
+# SPDX-FileCopyrightText: 2023 Nozaki 
+# SPDX-License-Identifier: BSD-3-Clause
+import rclpy                     
+from rclpy.node import Node      
+from std_msgs.msg import Float64 
+import random 
 
-class PiCalculator(Node):
+rclpy.init()
+node = Node("pi_approximator")   
+pub = node.create_publisher(Float64, "pi_value", 10)   
+inside_circle = 0
+total_points = 0
 
-    def __init__(self):
-        super().__init__('pi_calculator')
-        self.publisher_ = self.create_publisher(Float64, 'pi_estimate', 10)
-        timer_period = 1  # seconds
-        self.timer = self.create_timer(timer_period, self.publish_pi_estimate)
-        self.total_points = 0
-        self.inside_circle = 0
+def cb():          
+    global inside_circle, total_points
+    x, y = random.random(), random.random()  # 単位正方形内にランダムな点を生成
+    distance = x**2 + y**2  # 原点からの距離の二乗を計算
+    if distance <= 1:
+        inside_circle += 1  # 点が単位円の内部にあるかチェック
+    total_points += 1
+    pi_estimate = 4 * inside_circle / total_points  # πの近似値を計算
+    
+    msg = Float64() 
+    msg.data = pi_estimate 
+    pub.publish(msg)  # PIの近似値をパブリッシュ
 
-    def calculate_pi(self, num_points):
-        for _ in range(num_points):
-            x, y = random.random(), random.random()
-            if x**2 + y**2 <= 1.0:
-                self.inside_circle += 1
-            self.total_points += 1
-        return (4 * self.inside_circle) / self.total_points
+    # ここでは3.1415で止まる正確な条件は実装していません。
+    # 実際には収束条件や所望の精度に基づいて停止処理を実装する必要があります。
+    if total_points % 20000 == 0:
+        node.get_logger().info('Pi approximate value: %f' % pi_estimate)
 
-    def publish_pi_estimate(self):
-        pi_estimate = self.calculate_pi(10000)
-        msg = Float64()
-        msg.data = pi_estimate
-        self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%f"' % msg.data)
-
-def main(args=None):
-    rclpy.init(args=args)
-    pi_calculator = PiCalculator()
-    rclpy.spin(pi_calculator)
-    pi_calculator.destroy_node()
-    rclpy.shutdown()
-
-if __name__ == '__main__':
-    main()
+node.create_timer(0.5, cb)  
+rclpy.spin(node)
