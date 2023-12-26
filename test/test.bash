@@ -10,7 +10,8 @@ dir=~
 cd "$dir/ros2_ws" && colcon build --packages-select mypkg
 
 # 環境をソース
-source "$dir/ros2_ws/install/setup.bash"
+#source "$dir/ros2_ws/install/setup.bash"
+source $dir/.bashrc
 
 # ノードを10秒間ランチしてログに出力、その後ログを解析する
 timeout 560 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
