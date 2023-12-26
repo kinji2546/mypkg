@@ -6,17 +6,17 @@ ros2のパッケージ.
 
 # リポジトリ内の主な内容一覧
 
-## talker.py
+### talker.py
 * パブリッシャのノード.  
 * モンテカルロ法を利用してπ（3.14）の近似値を求めて最終的にπ（3.14）に近くなる過程をトピック`/pi_value`を通じて送信する.  
 
 
-## listener.py  
+### listener.py  
 * サブスクライバのノード.  
 * トピック`/pi_value`からメッセージを受け取り表示する.  
 
-# 実行手順と一部結果
-## talker
+## 実行手順と一部結果
+### talker
 * `ros2 run`で実行する方法.  
 ```
 端末1$ ros2 run mypkg talker
@@ -31,7 +31,7 @@ ros2のパッケージ.
 但し数値は変わる.  
 プログラムを終わらせるときは[Ctrl＋C].  
 
-## listener  
+### listener  
 ```
 端末2$ ros2 run mypkg listener
 [INFO] [1703520550.981963577] [pi_listener]: Received pi estimate: "3.1463392728879464"
@@ -45,7 +45,7 @@ ros2のパッケージ.
 但し数値は変わる.  
 プログラムを終わらせるときは[Ctrl＋C].  
 
-# 同時に実行  
+### launch(同時に実行)  
 * `ros2 launch`で実行する方法.    
 ```
 $ ros2 launch mypkg talk_listen.launch.py
@@ -81,14 +81,14 @@ $ ros2 launch mypkg talk_listen.launch.py
 但し数値は変わる.  
 プログラムを終わらせるときは[Ctrl＋C].  
 
-## 必要なソフトウェア  
+### 必要なソフトウェア  
 * Python  
 * ROS2  
-## テスト環境  
+### テスト環境  
 * Ubuntu 20.04  
  
 
-# 権利関係  
+### 権利関係  
 * このソフトウェアパッケージは,3条項BSDライセンスの下,再頒布および使用が許可されます.  
 * このパッケージのコードの一部は,下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを,本人の許可を得て自身の著作としたものです.  
 	* [ryuichiueda/my_slides/robosys_2022/lesson9](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson9.html#/)  
