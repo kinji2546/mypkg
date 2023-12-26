@@ -16,7 +16,7 @@
 * サブスクライバのノード.  
 * トピック`/pi_value`からメッセージを受け取り表示する.
 
-# 実行手順  
+# 実行手順と一部結果
 ## talkerとlistener  
 * `ros2 run`で実行する方法
 ```
@@ -53,32 +53,14 @@ $ ros2 launch mypkg talk_listen.launch.py
 [INFO] [talker-1]: process started with pid [12170]
 [INFO] [listener-2]: process started with pid [12172]
 [talker-1] [INFO] [1703566836.386711687] [pi_calculator]: Publishing: "4.000000"
-[talker-1] [INFO] [1703566836.387918934] [pi_calculator]: Publishing: "2.666667"
-[talker-1] [INFO] [1703566836.403368132] [pi_calculator]: Publishing: "3.333333"
-[talker-1] [INFO] [1703566836.403737755] [pi_calculator]: Publishing: "3.200000"
 [listener-2] [INFO] [1703566836.404032024] [pi_listener]: Received pi estimate: "4.0"
 [talker-1] [INFO] [1703566836.404186601] [pi_calculator]: Publishing: "3.466667"
 [talker-1] [INFO] [1703566836.404480300] [pi_calculator]: Publishing: "3.428571"
-[listener-2] [INFO] [1703566836.404628125] [pi_listener]: Received pi estimate: "2.6666666666666665"
-[talker-1] [INFO] [1703566836.404907554] [pi_calculator]: Publishing: "3.428571"
-[talker-1] [INFO] [1703566836.405479928] [pi_calculator]: Publishing: "3.333333"
-[talker-1] [INFO] [1703566836.405736205] [pi_calculator]: Publishing: "3.377778"
-[talker-1] [INFO] [1703566836.406047079] [pi_calculator]: Publishing: "3.418182"
-[talker-1] [INFO] [1703566836.406332784] [pi_calculator]: Publishing: "3.272727"
-[talker-1] [INFO] [1703566836.406782640] [pi_calculator]: Publishing: "3.282051"
-[talker-1] [INFO] [1703566836.407106109] [pi_calculator]: Publishing: "3.296703"
-[talker-1] [INFO] [1703566836.407333860] [pi_calculator]: Publishing: "3.238095"
-[talker-1] [INFO] [1703566836.409155550] [pi_calculator]: Publishing: "3.134199"
-[talker-1] [INFO] [1703566836.409382698] [pi_calculator]: Publishing: "3.114625"
-[talker-1] [INFO] [1703566836.409626454] [pi_calculator]: Publishing: "3.101449"
-[talker-1] [INFO] [1703566836.409874608] [pi_calculator]: Publishing: "3.040000"
 [talker-1] [INFO] [1703566836.410153428] [pi_calculator]: Publishing: "3.052308"
 [talker-1] [INFO] [1703566836.410448738] [pi_calculator]: Publishing: "3.042735"
 [talker-1] [INFO] [1703566836.410741796] [pi_calculator]: Publishing: "3.068783"
 [talker-1] [INFO] [1703566836.411030866] [pi_calculator]: Publishing: "3.093596"
 [talker-1] [INFO] [1703566836.411320338] [pi_calculator]: Publishing: "3.098851"
-[talker-1] [INFO] [1703566836.411609305] [pi_calculator]: Publishing: "3.088172"
-[talker-1] [INFO] [1703566836.411897533] [pi_calculator]: Publishing: "3.096774"
 [talker-1] [INFO] [1703566836.412182321] [pi_calculator]: Publishing: "3.106061"
 [talker-1] [INFO] [1703566836.412461592] [pi_calculator]: Publishing: "3.094474"
 [talker-1] [INFO] [1703566836.413321168] [pi_calculator]: Publishing: "3.099099"
