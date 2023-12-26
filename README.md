@@ -27,9 +27,10 @@
 [INFO] [1703520550.982608643] [pi_calculator]: Publishing: "3.148921"
 [INFO] [1703520550.982815924] [pi_calculator]: Publishing: "3.148098"
 [INFO] [1703520550.983022342] [pi_calculator]: Publishing: "3.148079"
+```
 以下同じように出力される.
 但し数値は変わる.プログラムを終わらせるときは[コントロールキー＋C]
-```
+
 
 ```
 端末2$ $ ros2 run mypkg listener
@@ -39,9 +40,10 @@
 [INFO] [1703520550.982608643] [pi_listener]: Received pi estimate: "3.1489219159581757"
 [INFO] [1703520550.982815924] [pi_listener]: Received pi estimate: "3.1480988659704027"
 [INFO] [1703520550.983022342] [pi_listener]: Received pi estimate: "3.1480790646118781"
+```
 以下同じように出力される.
 但し数値は変わる.プログラムを終わらせるときは[コントロールキー＋C]
-```
+
 
 ## 必要なソフトウェア  
 * Python  
@@ -55,4 +57,5 @@
 * このパッケージのコードの一部は, 下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを, 本人の許可を得て自身の著作としたものです．
 * [ryuichiueda/my_slides/robosys_2022/lesson9](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson9.html#/)  
 * [ryuichiueda/my_slides/robosys_2022/lesson10](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson10.html#/)  
-* [ryuichiueda/my_slides/robosys_2022/lesson11](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson11.html#/)  
+* [ryuichiueda/my_slides/robosys_2022/lesson11](https://ryuichiueda.github.io/my_slides/robosys_2022/lesson11.html#/) 
+* © 2023 Nozaki 
