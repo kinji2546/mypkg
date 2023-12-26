@@ -25,7 +25,7 @@ def cb():
     pub.publish(msg)  # PIの近似値をパブリッシュ
 
     # ここでは3.1415で止まる正確な条件は実装していません。
-    # 実際には収束条件や所望の精度に基づいて停止処理を実装する必要があります。
+    
     if total_points % 20000 == 0:
         node.get_logger().info('Pi approximate value: %f' % pi_estimate)
 

@@ -33,7 +33,7 @@
 
 
 ```
-端末2$ $ ros2 run mypkg listener
+端末2$ ros2 run mypkg listener
 [INFO] [1703520550.981963577] [pi_listener]: Received pi estimate: "3.1463392728879464"
 [INFO] [1703520550.982169611] [pi_listener]: Received pi estimate: "3.1475171530456343"
 [INFO] [1703520550.982390703] [pi_listener]: Received pi estimate: "3.1498441091483718"
@@ -44,6 +44,58 @@
 以下同じように出力される.
 但し数値は変わる.プログラムを終わらせるときは[コントロールキー＋C]
 
+
+* `ros2 launch`で実行する方法
+```
+$ ros2 launch mypkg talk_listen.launch.py
+[INFO] [launch]: All log files can be found below /home/qxyt56fr/.ros/log/2023-12-26-14-00-36-023717-VAIO-12168
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [talker-1]: process started with pid [12170]
+[INFO] [listener-2]: process started with pid [12172]
+[talker-1] [INFO] [1703566836.386711687] [pi_calculator]: Publishing: "4.000000"
+[talker-1] [INFO] [1703566836.387918934] [pi_calculator]: Publishing: "2.666667"
+[talker-1] [INFO] [1703566836.403368132] [pi_calculator]: Publishing: "3.333333"
+[talker-1] [INFO] [1703566836.403737755] [pi_calculator]: Publishing: "3.200000"
+[listener-2] [INFO] [1703566836.404032024] [pi_listener]: Received pi estimate: "4.0"
+[talker-1] [INFO] [1703566836.404186601] [pi_calculator]: Publishing: "3.466667"
+[talker-1] [INFO] [1703566836.404480300] [pi_calculator]: Publishing: "3.428571"
+[listener-2] [INFO] [1703566836.404628125] [pi_listener]: Received pi estimate: "2.6666666666666665"
+[talker-1] [INFO] [1703566836.404907554] [pi_calculator]: Publishing: "3.428571"
+[talker-1] [INFO] [1703566836.405479928] [pi_calculator]: Publishing: "3.333333"
+[talker-1] [INFO] [1703566836.405736205] [pi_calculator]: Publishing: "3.377778"
+[talker-1] [INFO] [1703566836.406047079] [pi_calculator]: Publishing: "3.418182"
+[talker-1] [INFO] [1703566836.406332784] [pi_calculator]: Publishing: "3.272727"
+[talker-1] [INFO] [1703566836.406782640] [pi_calculator]: Publishing: "3.282051"
+[talker-1] [INFO] [1703566836.407106109] [pi_calculator]: Publishing: "3.296703"
+[talker-1] [INFO] [1703566836.407333860] [pi_calculator]: Publishing: "3.238095"
+[talker-1] [INFO] [1703566836.409155550] [pi_calculator]: Publishing: "3.134199"
+[talker-1] [INFO] [1703566836.409382698] [pi_calculator]: Publishing: "3.114625"
+[talker-1] [INFO] [1703566836.409626454] [pi_calculator]: Publishing: "3.101449"
+[talker-1] [INFO] [1703566836.409874608] [pi_calculator]: Publishing: "3.040000"
+[talker-1] [INFO] [1703566836.410153428] [pi_calculator]: Publishing: "3.052308"
+[talker-1] [INFO] [1703566836.410448738] [pi_calculator]: Publishing: "3.042735"
+[talker-1] [INFO] [1703566836.410741796] [pi_calculator]: Publishing: "3.068783"
+[talker-1] [INFO] [1703566836.411030866] [pi_calculator]: Publishing: "3.093596"
+[talker-1] [INFO] [1703566836.411320338] [pi_calculator]: Publishing: "3.098851"
+[talker-1] [INFO] [1703566836.411609305] [pi_calculator]: Publishing: "3.088172"
+[talker-1] [INFO] [1703566836.411897533] [pi_calculator]: Publishing: "3.096774"
+[talker-1] [INFO] [1703566836.412182321] [pi_calculator]: Publishing: "3.106061"
+[talker-1] [INFO] [1703566836.412461592] [pi_calculator]: Publishing: "3.094474"
+[talker-1] [INFO] [1703566836.413321168] [pi_calculator]: Publishing: "3.099099"
+[talker-1] [INFO] [1703566836.413566759] [pi_calculator]: Publishing: "3.089616"
+[talker-1] [INFO] [1703566836.413782315] [pi_calculator]: Publishing: "3.103914"
+[talker-1] [INFO] [1703566836.414352904] [pi_calculator]: Publishing: "3.128205"
+[talker-1] [INFO] [1703566836.414789966] [pi_calculator]: Publishing: "3.141463"
+[talker-1] [INFO] [1703566836.415250241] [pi_calculator]: Publishing: "3.131243"
+[listener-2] [INFO] [1703566836.423961303] [pi_listener]: Received pi estimate: "3.106060606060606"
+[listener-2] [INFO] [1703566836.425561064] [pi_listener]: Received pi estimate: "3.0944741532976825"
+[listener-2] [INFO] [1703566836.427250504] [pi_listener]: Received pi estimate: "3.092436974789916"
+[listener-2] [INFO] [1703566836.427740802] [pi_listener]: Received pi estimate: "3.0984126984126985"
+[listener-2] [INFO] [1703566836.429421557] [pi_listener]: Received pi estimate: "3.099099099099099"
+[listener-2] [INFO] [1703566836.430279537] [pi_listener]: Received pi estimate: "3.089615931721195" 
+```
+以下同じように出力される.
+但し数値は変わる.プログラムを終わらせるときは[コントロールキー＋C]
 
 ## 必要なソフトウェア  
 * Python  
