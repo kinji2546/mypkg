@@ -16,7 +16,7 @@ ros2のパッケージ.
 * トピック`/pi_value`からメッセージを受け取り表示する.  
 
 # 実行手順と一部結果
-## talkerとlistener  
+## talker
 * `ros2 run`で実行する方法.  
 ```
 端末1$ ros2 run mypkg talker
@@ -31,7 +31,7 @@ ros2のパッケージ.
 但し数値は変わる.  
 プログラムを終わらせるときは[Ctrl＋C].  
 
-
+## listener  
 ```
 端末2$ ros2 run mypkg listener
 [INFO] [1703520550.981963577] [pi_listener]: Received pi estimate: "3.1463392728879464"
@@ -45,7 +45,7 @@ ros2のパッケージ.
 但し数値は変わる.  
 プログラムを終わらせるときは[Ctrl＋C].  
 
-
+# 同時に実行  
 * `ros2 launch`で実行する方法.    
 ```
 $ ros2 launch mypkg talk_listen.launch.py
