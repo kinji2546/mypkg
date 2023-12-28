@@ -84,7 +84,7 @@ $ ros2 launch mypkg talk_listen.launch.py
 ## 必要なソフトウェア  
 * Python  
 
-##テスト環境  
+## テスト環境  
 * ROS2 foxy  
 * Ubuntu 20.04  
  
